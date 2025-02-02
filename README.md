@@ -68,6 +68,15 @@ To deploy the project using **GitHub Pages**:
    ```sh
    npx angular-cli-ghpages --dir=dist/health-challenge-tracker
    ```
+   # Test Coverage
+
+  The project includes unit tests for key components and services. The code coverage for `DashboardComponent` and `WorkoutService` is 100%.
+
+  To run tests and view the coverage report:
+
+  ```bash
+  ng test --code-coverage
+
 
 ## 🔧 Future Enhancements
 
