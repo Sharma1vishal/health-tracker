@@ -77,6 +77,8 @@ To deploy the project using **GitHub Pages**:
   ```bash
   ng test --code-coverage
 
+after test coverage, some components did a full page reload, which included dashboard.component and also as there is only one service that is workout.service, it also gave the correct data and loaded the data properly, so no failures in these two. Hence, my test coverage is covered for these two, and the test cases for these two are provided in the specs file of both of them. As dashboard.component.spec.ts and workout.service.spec.ts.
+
 
 ## 🔧 Future Enhancements
 
