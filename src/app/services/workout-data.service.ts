@@ -10,7 +10,7 @@ export class WorkoutService {
 
   getWorkouts(): any[] {
     const storedData = localStorage.getItem(this.storageKey);
-    if(storedData == []) {
+    if(storedData.length == 0) {
       storedData = [
     {
       id: 1,
