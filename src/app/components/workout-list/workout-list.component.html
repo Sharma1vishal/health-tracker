@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+
+<div
+  class="list-container bg-gradient-to-br from-indigo-900 to-indigo-600 text-black p-8 font-poppins rounded-xl min-h-[90vh] mt-[-28px] opacity-0 animate-fadeInUp"
+>
+  <!-- Workout List Title -->
+  <h2 class="text-2xl font-bold text-center mb-8 text-black">Workout List</h2>
+
+  <!-- Filters Section -->
+  <div class="filters flex justify-between mb-8">
+    <!-- Search Input -->
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="applyFilters()"
+      placeholder="Search by name"
+      class="search-input p-3 text-lg rounded-lg border-none shadow-lg transition-shadow duration-300 w-[45%] focus:shadow-xl placeholder:text-gray-400"
+    />
+    <!-- Filter Select -->
+    <select
+      [(ngModel)]="filterType"
+      (change)="applyFilters()"
+      class="filter-select p-3 text-lg rounded-lg border-none shadow-lg transition-shadow duration-300 w-[45%] focus:shadow-xl placeholder:text-gray-400"
+    >
+      <option value="">All Types</option>
+      <option *ngFor="let type of uniqueWorkoutTypes" [value]="type">
+        {{ type }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Workout Table -->
+  <table
+    class="workout-table w-full mb-8 border-3 border-white rounded-lg table-auto"
+  >
+    <thead>
+      <tr>
+        <th
+          class="py-4 px-6 text-center text-lg font-semibold bg-blue-800 text-black"
+        >
+          Name
+        </th>
+        <th
+          class="py-4 px-6 text-center text-lg font-semibold bg-blue-800 text-black"
+        >
+          Type
+        </th>
+        <th
+          class="py-4 px-6 text-center text-lg font-semibold bg-blue-800 text-black"
+        >
+          Duration (min)
+        </th>
+        <th
+          class="py-4 px-6 text-center text-lg font-semibold bg-blue-800 text-black"
+        >
+          Calories
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let workout of paginate(filteredWorkouts)"
+        class="hover:bg-blue-600 cursor-pointer transform transition-all duration-200 hover:scale-105"
+      >
+        <td class="py-4 px-6 text-center border-b border-gray-300 text-black">
+          {{ workout.name }}
+        </td>
+        <td class="py-4 px-6 text-center border-b border-gray-300 text-black">
+          {{ workout.type }}
+        </td>
+        <td class="py-4 px-6 text-center border-b border-gray-300 text-black">
+          {{ workout.duration }}
+        </td>
+        <td class="py-4 px-6 text-center border-b border-gray-300 text-black">
+          {{ workout.calories }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Component -->
+  <app-pagination
+    [currentPage]="currentPage"
+    [totalPages]="getTotalPages()"
+    [totalItems]="filteredWorkouts.length"
+    (pageChange)="onPageChange($event)"
+    (itemsPerPageChange)="onItemsPerPageChange($event)"
+    class="flex justify-center mt-8"
+  ></app-pagination>
+</div>
+
+<!-- Tailwind Animations -->
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+</style>

@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+  <!-- Left-side: User List -->
+  <div class="left-side">
+    <h3 class="user-list-title">Select User</h3>
+    <ul class="user-list">
+      <li *ngFor="let user of usersList" (click)="selectUser(user)">
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Right-side: Chart Display -->
+  <div class="right-side">
+    <h3 class="user-workout-title">{{ selectedUser?.name }}'s Workout Stats</h3>
+    <div class="chart-container">
+      <canvas
+        baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [type]="barChartType"
+      ></canvas>
+    </div>
+  </div>
+</div>

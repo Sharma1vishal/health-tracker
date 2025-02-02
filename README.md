@@ -1,27 +1,87 @@
-# HealthChallengeTracker
+# Health Challenge Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## 📌 Project Overview
 
-## Development server
+Health Challenge Tracker is a web application built with **Angular 16** that helps users track their workout activities. Users can add, view, and analyze their workout data using interactive charts and lists. The data is persisted using **local storage**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- **Dashboard:** Provides an overview of workout data.
+- **Add Workout:** Allows users to log new workout sessions.
+- **Workout List:** Displays all logged workouts in a tabular format.
+- **Workout Charts:** Visualizes workout data using charts.
+- **Pagination:** Supports navigation through large workout lists.
+- **Navbar & Page Not Found:** Common UI components for navigation and error handling.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📂 Folder Structure
 
-## Build
+```
+health-challenge-tracker/
+│── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── dashboard/
+│   │   │   ├── workout-list/
+│   │   │   ├── workout-charts/
+│   │   │   ├── add-workout/
+│   │   │   ├── common/
+│   │   │   │   ├── navbar/
+│   │   │   │   ├── pagination/
+│   │   │   │   ├── page-not-found/
+│   ├── assets/
+│   ├── environments/
+│── angular.json
+│── package.json
+│── README.md
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚡ Installation & Setup
 
-## Running unit tests
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/Sharma1vishal/health-tracker.git
+   cd health-challenge-tracker
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+3. **Run the project locally:**
+   ```sh
+   ng serve
+   ```
+   Open `http://localhost:4200/` in your browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📊 Data Persistence
 
-## Running end-to-end tests
+- Workout data is stored and retrieved from **local storage** to maintain persistence across sessions.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🚢 Deployment
 
-## Further help
+To deploy the project using **GitHub Pages**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. **Build the project:**
+   ```sh
+   ng build --configuration=production
+   ```
+2. **Deploy to GitHub Pages:**
+   ```sh
+   npx angular-cli-ghpages --dir=dist/health-challenge-tracker
+   ```
+
+## 🔧 Future Enhancements
+
+- **User Authentication:** Secure login and signup functionality.
+- **Backend Integration:** Replace local storage with a database.
+- **More Charts & Insights:** Advanced analytics for workout trends.
+- **Dark Mode:** Theme support for better UI/UX.
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+### 🎯 Contribute & Support
+
+Feel free to fork this repo, submit issues, and contribute! 😊

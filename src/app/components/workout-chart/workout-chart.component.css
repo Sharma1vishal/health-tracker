@@ -1,0 +1,108 @@
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    gap: 2rem;
+  }
+  
+  
+  .left-side {
+    background: white;
+    color: #1e3a8a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .left-side:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .user-list-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  
+  .user-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-list li {
+    background: #2563eb;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .user-list li:hover {
+    background: #1e40af;
+    transform: scale(1.05);
+  }
+  
+  
+  .right-side {
+    flex-grow: 1;
+    background: white;
+    color: #1e3a8a;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .right-side:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .user-workout-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  
+  .chart-container {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dashboard-container,
+  .left-side,
+  .right-side {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
