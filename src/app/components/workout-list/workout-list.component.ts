@@ -54,6 +54,7 @@ export class WorkoutListComponent implements OnInit {
       });
     });
 
+    console.log("dsts",summedWorkouts);
     
     this.workouts = Object.values(summedWorkouts);
     this.filteredWorkouts = [...this.workouts]; 
